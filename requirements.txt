@@ -1,4 +1,4 @@
 # requirements.txt
 # Python==3.8.3
 Scrapy==0.24.4
-scrapy-heroku==0.7.1
+# scrapy-heroku==0.7.1
