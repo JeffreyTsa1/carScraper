@@ -94,11 +94,12 @@ ITEM_PIPELINES = {
 
 
 
-DATABASE_CONNECTION_STRING = '{drivername}://{user}:{password}@{host}:{port}/{db_name}'.format(
-    drivername='postgresql',
-    user=os.environ.get('PG_USERNAME', 'ziqvmhxhcnuase'),
-    password=os.environ.get('PG_PASSWORD','90c460cf3812eef43dfe2b49c221061575bc154f69177f0530fa9ab69a8dc371'),
-    host=os.environ.get('PG_HOST', 'ec2-18-213-133-45.compute-1.amazonaws.com'),
-    port=os.environ.get('PG_PORT', '5432'),
-    db_name=os.environ.get('PG_DATABASE', 'd8gf6jesquhuaj'),
-)
+# DATABASE_CONNECTION_STRING = '{drivername}://{user}:{password}@{host}:{port}/{db_name}'.format(
+#     drivername='postgresql',
+#     user=os.environ.get('PG_USERNAME', 'ziqvmhxhcnuase'),
+#     password=os.environ.get('PG_PASSWORD','90c460cf3812eef43dfe2b49c221061575bc154f69177f0530fa9ab69a8dc371'),
+#     host=os.environ.get('PG_HOST', 'ec2-18-213-133-45.compute-1.amazonaws.com'),
+#     port=os.environ.get('PG_PORT', '5432'),
+#     db_name=os.environ.get('PG_DATABASE', 'd8gf6jesquhuaj'),
+# )
+DATABASE_CONNECTION_STRING = 'postgres://ziqvmhxhcnuase:90c460cf3812eef43dfe2b49c221061575bc154f69177f0530fa9ab69a8dc371@ec2-18-213-133-45.compute-1.amazonaws.com:5432/d8gf6jesquhuaj'
