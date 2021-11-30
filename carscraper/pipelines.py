@@ -58,8 +58,8 @@ class KbbPipeline(object):
         description = item["description"]
         sql = "INSERT INTO cars (vin, image, name, price, dealer, make, model, year, drive, engine, transmission, color, mileage, body, url, fuelType, fuelEfficiency, description) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         val = (vin, image, name, price, dealer, make, model, year, drive, engine, transmission, color, mileage, body, url, fuelType, fuelEfficiency, description)
-        # self.cur.execute(sql, val)
-        self.cur.execute("INSERT INTO cars (item['vin'], item['image'], item['name'], item['price'], item['dealer'], item['make'], item['model'], item['year'], item['drive'], item['engine'], item['transmission'], item['color'], item['mileage'], item['body'], item['url'], item['fuelType'], item['fuelEfficiency'], item['description']) VALUES (%s, %s, %s, %d, %s, %s, %s, %d, %s, %s, %s, %s, %s, %s, %s, %s)")
+        self.cur.execute(sql, val)
+        # self.cur.execute("INSERT INTO cars (item['vin'], item['image'], item['name'], item['price'], item['dealer'], item['make'], item['model'], item['year'], item['drive'], item['engine'], item['transmission'], item['color'], item['mileage'], item['body'], item['url'], item['fuelType'], item['fuelEfficiency'], item['description']) VALUES (%s, %s, %s, %d, %s, %s, %s, %d, %s, %s, %s, %s, %s, %s, %s, %s)")
         self.connection.commit()
         return item
 
