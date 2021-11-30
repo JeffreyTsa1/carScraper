@@ -50,8 +50,9 @@ class KBBSpider(scrapy.Spider):
         # yield Request(url=url, callback=self.parse_product_page)
         
         rangeNumbers = ["0", "15000", "20000", "25000", "30000", "35000", "40000", "50000", "9000000"]
+        # rangeNumbers = ["0", "50000", "9000000"]
         rangeLen = len(rangeNumbers)
-        number_of_pages = 25
+        number_of_pages = 40
         
         # Loops through each price bracket (0-15000, 15000-20000, 20000-25000,..., 50000-9000000)
         for i in range(rangeLen-1):
