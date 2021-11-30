@@ -30,10 +30,7 @@ class KbbPipeline(object):
         database = 'd8gf6jesquhuaj'
         self.connection = psycopg2.connect(host=hostname, user=username, password=password, dbname=database)
         self.cur = self.connection.cursor()
-        # self.cur.execute("CREATE TABLE cars(vin VARCHAR, image VARCHAR, name VARCHAR, price INT, dealer VARCHAR
-        # , make VARCHAR, model VARCHAR, year INT, drive VARCHAR, engine VARCHAR, transmission VARCHAR, 
-        # color VARCHAR, mileage VARCHAR, body VARCHAR, url VARCHAR, fuelType VARCHAR, fuelEfficiency VARCHAR, 
-        # description VARCHAR)")
+        self.cur.execute("CREATE TABLE cars(vin VARCHAR, image VARCHAR, name VARCHAR, price INT, dealer VARCHAR, make VARCHAR, model VARCHAR, year INT, drive VARCHAR, engine VARCHAR, transmission VARCHAR, color VARCHAR, mileage VARCHAR, body VARCHAR, url VARCHAR, fuelType VARCHAR, fuelEfficiency VARCHAR, description VARCHAR)")
         # self.cur.execute("CREATE TABLE cars(vin, image, name, price, dealer, make, model, year, drive, engine, transmission, color, mileage, body, url, fuelType, fuelEfficiency, description)")
 
     def close_spider(self, spider):
@@ -61,7 +58,7 @@ class KbbPipeline(object):
         description = item["description"]
         sql = "INSERT INTO cars (vin, image, name, price, dealer, make, model, year, drive, engine, transmission, color, mileage, body, url, fuelType, fuelEfficiency, description) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         val = (vin, image, name, price, dealer, make, model, year, drive, engine, transmission, color, mileage, body, url, fuelType, fuelEfficiency, description)
-        self.cur.execute(sql, val)
+        # self.cur.execute(sql, val)
         # self.cur.execute("INSERT INTO cars (item['vin'], item['image'], item['name'], item['price'], item['dealer'], item['make'], item['model'], item['year'], item['drive'], item['engine'], item['transmission'], item['color'], item['mileage'], item['body'], item['url'], item['fuelType'], item['fuelEfficiency'], item['description']) VALUES (%s, %s, %s, %d, %s, %s, %s, %d, %s, %s, %s, %s, %s, %s, %s, %s)")
         self.connection.commit()
         return item
